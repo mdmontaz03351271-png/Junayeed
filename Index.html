@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<title>লগ ইন</title>
+<script src="./_runtime/react.js"></script>
+<script src="./_runtime/react-dom.js"></script>
+<script src="./_runtime/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;font-family:'Hind Siliguri',system-ui,sans-serif;background:#F7F5F0}
+a{color:{{accent}};text-decoration:none}
+a:hover{text-decoration:underline}
+input[type=email],input[type=text],input[type=password]{outline:none}
+input[type=email]:focus,input[type=text]:focus,input[type=password]:focus{border-color:{{accent}};box-shadow:0 0 0 3px rgba(31,95,74,.18)}
+button{font-family:inherit;cursor:pointer}
+.primary:hover{filter:brightness(1.12)}
+.secondary:hover{background:#EFEBE3}
+.eye:hover{background:#EFEBE3}
+</style>
+</helmet>
+<div style="min-height: 800px; display: flex; flex-wrap: wrap; font-family: 'Hind Siliguri', system-ui, sans-serif; color: #1B1B18; background: #F7F5F0">
+
+<div style="flex: 1 1 420px; box-sizing: border-box; padding: 56px; background: {{accent}}; color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between; gap: 48px; min-height: 320px">
+<div style="display: flex; align-items: center; gap: 12px">
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true"><rect x="2" y="2" width="32" height="32" rx="9" stroke="#FFFFFF" stroke-width="2.5"></rect><path d="M11 18.5l5 5 9-11" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<span style="font-size: 22px; font-weight: 600">[আপনার অ্যাপের নাম]</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 16px; max-width: 440px">
+<h2 style="margin: 0; font-size: 40px; line-height: 1.25; font-weight: 700">আবার স্বাগতম।</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.88)">আপনার অ্যাকাউন্টে প্রবেশ করে কাজ চালিয়ে যান। সবকিছু যেখানে রেখে গিয়েছিলেন, ঠিক সেখানেই আছে।</p>
+</div>
+<div style="font-size: 14px; color: rgba(255,255,255,0.8)">© [বছর] [আপনার অ্যাপের নাম]</div>
+</div>
+
+<div style="flex: 1 1 480px; box-sizing: border-box; padding: 48px 24px; display: flex; align-items: center; justify-content: center">
+<form style="width: 100%; max-width: 400px; display: flex; flex-direction: column; gap: 20px" onSubmit="{{noSubmit}}">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h1 style="margin: 0; font-size: 32px; font-weight: 700">লগ ইন করুন</h1>
+<p style="margin: 0; font-size: 16px; color: #55554E">আপনার ইমেইল ও পাসওয়ার্ড দিন।</p>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="email" style="font-size: 15px; font-weight: 500">ইমেইল</label>
+<input id="email" type="email" placeholder="name@example.com" autocomplete="email" style="height: 48px; box-sizing: border-box; padding: 0 14px; font-size: 16px; font-family: inherit; color: #1B1B18; background: #FFFFFF; border: 1.5px solid #CFCAC0; border-radius: 10px">
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
+<label for="pw" style="font-size: 15px; font-weight: 500">পাসওয়ার্ড</label>
+<a href="#" style="font-size: 14px; font-weight: 500">পাসওয়ার্ড ভুলে গেছেন?</a>
+</div>
+<div style="position: relative; display: flex; align-items: center">
+<input id="pw" type="{{pwType}}" placeholder="আপনার পাসওয়ার্ড" autocomplete="current-password" style="width: 100%; height: 48px; box-sizing: border-box; padding: 0 52px 0 14px; font-size: 16px; font-family: inherit; color: #1B1B18; background: #FFFFFF; border: 1.5px solid #CFCAC0; border-radius: 10px">
+<button type="button" class="eye" aria-label="{{eyeLabel}}" onClick="{{togglePw}}" style="position: absolute; right: 4px; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: transparent; border: none; border-radius: 8px; color: #55554E">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle><sc-if value="{{pwVisible}}" hint-placeholder-val="{{ false }}"><path d="M3 3l18 18"></path></sc-if></svg>
+</button>
+</div>
+</div>
+
+<label style="display: flex; align-items: center; gap: 10px; font-size: 15px; min-height: 44px; cursor: pointer">
+<input type="checkbox" style="width: 20px; height: 20px; margin: 0; accent-color: {{accent}}">
+<span>আমাকে মনে রাখুন</span>
+</label>
+
+<button type="button" class="primary" style="height: 52px; font-size: 17px; font-weight: 600; color: #FFFFFF; background: {{accent}}; border: none; border-radius: 10px">লগ ইন</button>
+
+<div style="display: flex; align-items: center; gap: 14px; color: #55554E; font-size: 14px">
+<div style="flex: 1; height: 1px; background: #D9D4CA"></div>
+<span>অথবা</span>
+<div style="flex: 1; height: 1px; background: #D9D4CA"></div>
+</div>
+
+<button type="button" class="secondary" style="height: 52px; font-size: 16px; font-weight: 500; color: #1B1B18; background: transparent; border: 1.5px solid #CFCAC0; border-radius: 10px">ওয়ান-টাইম কোড দিয়ে লগ ইন</button>
+
+<p style="margin: 0; text-align: center; font-size: 15px; color: #55554E">অ্যাকাউন্ট নেই? <a href="#" style="font-weight: 600">নতুন অ্যাকাউন্ট খুলুন</a></p>
+</form>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#1F5F4A","options":["#1F5F4A","#1F4FA8","#8A3B12","#3D2C8D"]},"$preview":{"width":1280,"height":800}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { pwVisible: false };
+  }
+  renderVals() {
+    const v = this.state.pwVisible;
+    return {
+      accent: this.props.accent ?? '#1F5F4A',
+      pwVisible: v,
+      pwType: v ? 'text' : 'password',
+      eyeLabel: v ? 'পাসওয়ার্ড লুকান' : 'পাসওয়ার্ড দেখান',
+      togglePw: () => this.setState({ pwVisible: !this.state.pwVisible }),
+      noSubmit: (e) => { if (e && e.preventDefault) e.preventDefault(); }
+    };
+  }
+}
+</script>
+</body>
+</html>
